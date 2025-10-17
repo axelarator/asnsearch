@@ -5,17 +5,12 @@ This script allows searching for ASNs by either the ASN itself, a country code, 
 
 The default service does not require an API key.
 
-When matches are found, results are saved to `asn.txt` in an easy to parse format:
-
-`./asnsearch -country CA -keyword city`
-```
-AS5110  CITY-OF-VANCOUVER, CA
-AS14836 CITY-OF-TORONTO, CA
-AS15052 CITY-OF-BURNABY, CA
-AS18988 CITYWEST-CORP, CA
-```
-
+Check the Release section for the latest binary. You can also clone this repo and build it yourself
 ```bash
+$ git clone https://github.com/axelarator/asnsearch/
+$ cd asnsaerch
+$ go build
+$ ./asnsearch
 Usage of ./asnsearch:
   -api string
         API URL to fetch ASN data from (default "https://bgp.potaroo.net/cidr/autnums.html")
@@ -26,4 +21,14 @@ Usage of ./asnsearch:
   -keyword string
         Keyword to filter on (e.g., bank, vultr)
 Filters can also be combined. Ex. -country US -keyword vultr
+```
+
+When matches are found, results are saved to `asn.txt` in an easy to parse format
+
+`./asnsearch -country CA -keyword city`
+```
+AS5110  CITY-OF-VANCOUVER, CA
+AS14836 CITY-OF-TORONTO, CA
+AS15052 CITY-OF-BURNABY, CA
+AS18988 CITYWEST-CORP, CA
 ```
